@@ -12,6 +12,7 @@ TagManager:
   - Shuttle crate
   - Abandoned settlement crate
   - Cactus crate
+  - Cthulu crate
   layers:
   - Default
   - TransparentFX
