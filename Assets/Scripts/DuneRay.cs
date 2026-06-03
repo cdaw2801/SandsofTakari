@@ -18,6 +18,7 @@ public class DuneRay : MonoBehaviour
     {
         if (gameManagerScript.isGameActive)
         {
+            // moves the ray up when the 
             if (gameManagerScript.timeLeft <= 3)
             {
                 if (transform.position.y >= -150 && moveUp)

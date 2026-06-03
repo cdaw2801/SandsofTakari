@@ -28,10 +28,10 @@ public class PlayerMovement3 : MonoBehaviour
             // get mouse input
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * senseX;
             float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * senseY;
-
+            //the rotation of the camera from the rotation of the mouse
             yRotation += mouseX;
             xRotation -= mouseY;
-
+            //sets how far you can look up or down
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
             // rotate camera and orientation

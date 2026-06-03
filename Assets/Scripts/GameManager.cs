@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
                 timeLeft = 0;
                 hasShuttleDissappeared = true; 
                 // kills you if you're too close to the shuttle
-                if (GameObject.Find("Player").transform.position.x < 45 && hasShuttleDissappeared == true)
+                if (GameObject.Find("Player").transform.position.x < 45 && GameObject.Find("Player").transform.position.x > -45 && hasShuttleDissappeared == true)
                 {
                     GameOver();
                 }

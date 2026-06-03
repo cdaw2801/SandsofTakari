@@ -29,7 +29,7 @@ public class MovePlayer : MonoBehaviour
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
     private bool exitingSlope;
-
+    //jump, sprint, and crouch keys
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
@@ -73,7 +73,7 @@ public class MovePlayer : MonoBehaviour
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
-
+            //jumping
             if (Input.GetKey(jumpKey) && readyToJump && isOnGround)
             {
                 Jump();
@@ -82,7 +82,7 @@ public class MovePlayer : MonoBehaviour
 
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
-
+            //crouching
             if (Input.GetKeyDown(crouchKey))
             {
                 transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
@@ -107,7 +107,7 @@ public class MovePlayer : MonoBehaviour
             MyInput();
             SpeedControl();
             StateHandler();
-
+            //making movement more realistic
             if (isOnGround)
             {
                 rb.linearDamping = groundDrag;
@@ -131,7 +131,7 @@ public class MovePlayer : MonoBehaviour
                 state = MovementState.crouching;
                 moveSpeed = crouchSpeed;
             }
-            // Mode - running man
+            // Mode - running man(this is a reference to the book, I kind of just ran with it)
             if (isOnGround && Input.GetKey(sprintKey))
             {
                 state = MovementState.sprinting;
@@ -235,6 +235,7 @@ public class MovePlayer : MonoBehaviour
 
     private void ResetJump ()
     {
+        //allows you to jump
         if (gameManagerScript.isGameActive == true)
         {
             readyToJump = true;
@@ -246,6 +247,7 @@ public class MovePlayer : MonoBehaviour
 
     private bool OnSlope() 
     {
+        //math for whether you can go up a slope or not
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f)) 
         {
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);

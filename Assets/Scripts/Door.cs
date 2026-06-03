@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        //teleports player through a door and back
         if (other.gameObject.name == ("PlayerObj"))
         {
             other.transform.parent.transform.position = teleportPoint.transform.position;
@@ -31,29 +31,6 @@ public class Door : MonoBehaviour
         else if(other.gameObject.name == ("PlayerObj"))
         {
             other.transform.parent.transform.position = teleportPoint.transform.position;
-            
-        }
-
-        if (other.gameObject.name == ("PlayerObj"))
-        {
-            
-            other.transform.parent.transform.position = teleportPoint.transform.position;
-        }
-        else if (other.gameObject.name == ("PlayerObj"))
-        {
-            other.transform.parent.transform.position = teleportPoint.transform.position;
-            
-        }
-        
-        if (other.gameObject.name == ("PlayerObj"))
-        {
-            other.transform.parent.transform.position = teleportPoint.transform.position;
-            
-        }
-        else if (other.gameObject.name == ("PlayerObj"))
-        {
-            other.transform.parent.position = teleportPoint.transform.position;
-            
             
         }
 

@@ -3,8 +3,7 @@ using UnityEngine.UI;
 
 public class ZigguratDoor : MonoBehaviour
 {
-    public Button restartButton;
-    public GameObject victoryText;
+   
     public GameManager gameManagerScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +20,7 @@ public class ZigguratDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //makes you win if you collide with it.
         if(other.gameObject.name == ("PlayerObj"))
         {
             gameManagerScript.GameWon();

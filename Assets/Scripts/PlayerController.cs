@@ -1,9 +1,6 @@
-using TMPro.EditorUtilities;
+
 using UnityEngine;
-using UnityEngine.InputSystem.XR.Haptics;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal.Internal;
-using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {

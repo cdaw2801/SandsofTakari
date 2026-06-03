@@ -13,11 +13,11 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       // makes the position of the mouse the position of the camera
        if(gameManagerScript.isGameActive == true)
-        {
+       {
             transform.position = cameraPosition.position;
-        }
+       }
             
         
         
